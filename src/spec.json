@@ -1,0 +1,28 @@
+{
+    "transactions": [
+        {
+            "id": 0,
+            "date": "2018-03-26 20:45",
+            "from": "Deelnemer  (NL19ABCD0836283627)",
+            "desc": "Deposit 10 eur",
+            "amount": "+10.00",
+            "tags": "revbank"
+        },
+        {
+            "id": 1,
+            "date": "2018-03-26 21:28",
+            "from": "Supermarkt (NL83WXYZ0473829389)",
+            "desc": "BBQ",
+            "amount": "-130.00",
+            "tags": "bbq"
+        },
+        {
+            "id": 2,
+            "date": "2018-03-26 22:36",
+            "from": "Supermarkt (NL83WXYZ0473829389)",
+            "desc": "BBQ",
+            "amount": "-90.00",
+            "tags": "bbq"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+
+html {
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    color: #383838;
+}
+
+.block {
+    margin-bottom: 1.5rem;
+    width: 80vw;
+    margin: 10vw;
+}
+
+table {
+    border-spacing: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#from {
+    color: #D50C2D;
+    font-weight: bold;
+}
+
+th {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+td, th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+}
+
+tbody {
+    background: #fff;
+}
+
+tbody tr {
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+}
+
+a, a:visited, a:hover {
+    color: #D50C2D;
+}
