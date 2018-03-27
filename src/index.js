@@ -1,20 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+var create = require('create-react-class');
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {sortBy: 'date', rev: false, json: {transactions: []}};
-        this.sortby = this.sortby.bind(this);
-        this.sort = this.sort.bind(this);
+var App = create({
+    getInitialState: function() {
+        return {sortBy: 'date', rev: false, json: {transactions: []}};
+    },
+
+    componentDidMount: function() {
         fetch("src/spec.json")
             .then(response => response.json())
             .then(responseJson => {
                 this.setState({json: responseJson});
             })
-    }
+    },
 
-    sortby(val) {
+    sortby: function(val) {
         let rev = this.state.rev;
         if (val == this.state.sortBy && !rev) {
             rev = true;
@@ -22,9 +23,9 @@ class App extends React.Component {
             rev = false;
         }
         this.setState({sortBy: val, rev: rev});
-    }
+    },
 
-    sort() {
+    sort: function() {
         let sorted = this.state.json.transactions;
         switch (this.state.sortBy) {
             case 'date':
@@ -50,9 +51,9 @@ class App extends React.Component {
             sorted.reverse();
         }
         return sorted;
-    }
+    },
 
-    render() {
+    render: function() {
         let sorted = this.sort();
         let rows = sorted.map((trans, id) =>
             <tr key={trans.id}>
@@ -85,10 +86,10 @@ class App extends React.Component {
             </div>
         );
     }
-}
+});
 
-class Amount extends React.Component {
-    render() {
+var Amount = create({
+    render: function() {
         let color = '#34d40c';
         if (this.props.amount.substr(0,1) == '-') {
             color = '#D50C2D';
@@ -97,7 +98,8 @@ class Amount extends React.Component {
             <td style={{'color': color}}>{this.props.amount}</td>
         );
     }
-}
+});
+
 ReactDOM.render(
   <App />,
   document.getElementById('root')

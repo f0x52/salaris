@@ -1,4 +1,4 @@
 # Salaris
 
-Basic React.js accounting software
+Basic React.js accounting software  
 Name is WIP
